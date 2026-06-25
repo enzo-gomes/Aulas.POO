@@ -1,0 +1,43 @@
+package atv;
+
+public class ContaBancaria {
+    //atributo de classe
+    public double saldo;
+    public String titular;
+
+    //construtores
+    public ContaBancaria(double saldo, String titular) {
+        this.saldo = saldo;
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public double depositar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalStateException("invalido");
+        }
+        return saldo+=valor;
+
+    }
+    public double sacar(double valor){
+        validar(valor);
+        return saldo -= valor;
+    }
+    private double validar(double valor){
+        if (valor <= 0 || valor > saldo){
+            throw new IllegalStateException("invalido");
+        }
+        return valor;
+    }
+}
+
+
+
