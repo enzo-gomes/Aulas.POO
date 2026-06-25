@@ -1,0 +1,25 @@
+package atv;
+
+public class ContaTeste {
+    static void main() {
+        ContaBancaria a = new ContaBancaria(5000, "Enzo");
+
+        System.out.println("Titular:");
+        System.out.println(a.titular);
+        System.out.println("SAlDO:");
+        System.out.println(a.getSaldo());
+
+        System.out.println("INFORMAÇÕES PÓS DEPÓSITO");
+        System.out.println("TITULAR:");
+        System.out.println(a.titular);
+
+        a.depositar(4000);
+        System.out.println("SALDO ATUAL: ");
+        System.out.println(a.getSaldo());
+
+        a.sacar(1200);
+        System.out.println("SALDO PÓS SAQUE: ");
+        System.out.println(a.getSaldo());
+
+    }
+}
